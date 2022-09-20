@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Button, ButtonGroup } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/react";
+import { Input } from "@chakra-ui/react";
+import DisplayJohn from "./DisplayJohn";
+import { JohnProfile } from "./DisplayJohn";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ChakraProvider>
+        <Button colorScheme="blue" size="lg">
+          Button
+        </Button>
+        <Button colorScheme="red" size="sm">
+          Button
+        </Button>
+        <Button colorScheme="green" size="md">
+          Button
+        </Button>
+        <Button colorScheme="purple" size="xs"></Button>
+
+        <Spinner color="red.500" size="xs" />
+        <Spinner color="blue.500" size="sm" />
+        <Spinner color="purple.500" size="md" />
+        <Input variant="outline" placeholder="Enter amount" />
+        <Input variant="filled" placeholder="Enter amount" />
+        <Input variant="flushed" placeholder="Enter amount" />
+      </ChakraProvider>
+      <DisplayJohn />
+      <JohnProfile />
     </div>
   );
 }
